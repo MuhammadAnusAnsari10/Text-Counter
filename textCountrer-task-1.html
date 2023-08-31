@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Counter</title>
+</head>
+<body>
+   <textarea cols="30" rows="10" id="text" placeholder="type here!"></textarea>
+   <div>
+    <span id="totalCharacters">Total Characters :</span>
+    <span id="totalWords">Total words :</span>
+   </div>
+   <button onclick="totalCharactersCount()">total character</button>
+   <button onclick="totalWordsCount()">total words</button>
+
+   <script>
+
+       function totalCharactersCount(){
+           const inp = document.getElementById("text");
+           document.getElementById("totalCharacters").innerText="Total Characters"+inp.value.length
+        }
+         
+        function totalWordsCount(){
+           const inp = document.getElementById("text").value;
+           const space = inp.split(" ")
+           let arr = space.filter(function(element){
+                return element != "";
+            })
+            document.getElementById("totalWords").innerText="Total words"+arr.length
+        }
+        
+         // function totalWordsCount(){
+        //    const inp = document.getElementById("text").value;
+        //    const space = inp.split(" ")
+        //    var arr = []
+        //     space.forEach(element => {
+        //         if(element == ""){
+                    
+        //         }else{
+        //             arr.push(element)
+        //         }
+        //         console.log(arr.length)
+        //     });
+        //     document.getElementById("totalWords").innerText="words"+arr.length
+        // }
+
+
+
+    
+   </script>
+</body>
+</html>
